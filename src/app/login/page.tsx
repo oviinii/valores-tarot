@@ -65,8 +65,7 @@ export default async function LoginPage() {
               <input
                 name="email"
                 type="email"
-                placeholder="vinicius9141@gmail.com"
-                defaultValue="vinicius9141@gmail.com"
+                placeholder="seu@email.com"
                 required
                 className="mt-1.5 w-full rounded-xl bg-zinc-900 border border-zinc-800 px-4 py-3.5 text-sm outline-none focus:border-amber-400/50 focus:ring-4 focus:ring-amber-400/10 transition placeholder:text-zinc-600"
               />
@@ -80,7 +79,6 @@ export default async function LoginPage() {
                 required
                 className="mt-1.5 w-full rounded-xl bg-zinc-900 border border-zinc-800 px-4 py-3.5 text-sm outline-none focus:border-amber-400/50 focus:ring-4 focus:ring-amber-400/10 transition placeholder:text-zinc-600"
               />
-              <p className="text-xs text-zinc-500 mt-2">Senha atual: <code className="bg-zinc-900 px-1.5 py-0.5 rounded border border-zinc-800">123456</code> — troque depois no perfil.</p>
             </div>
           </div>
 

@@ -54,6 +54,7 @@ export default async function Dashboard() {
             <div className="w-9 h-9 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 border border-white/10 grid place-items-center font-bold text-xs">
               {(session.user.email || "V").slice(0, 2).toUpperCase()}
             </div>
+            <a href="/dashboard/settings" className="text-sm font-semibold border border-amber-400/20 bg-amber-400/10 text-amber-200 rounded-xl px-4 py-2 hover:bg-amber-400/20 transition">Alterar senha</a>
             <form
               action={async () => {
                 "use server";
@@ -72,7 +73,7 @@ export default async function Dashboard() {
           <div className="rounded-2xl p-5 bg-gradient-to-br from-amber-400 to-orange-500 text-zinc-950 relative overflow-hidden">
             <p className="text-xs font-black tracking-widest opacity-70">TOTAL GERAL</p>
             <p className="text-2xl lg:text-3xl font-black mt-1 tracking-tight">{formatBRL(grandTotal)}</p>
-            <p className="text-xs font-semibold opacity-70 mt-1">{grandPessoas} pessoas atendidas • peso SUMPRODUCT</p>
+            <p className="text-xs font-semibold opacity-70 mt-1">{grandPessoas} pessoas atendidas • 15×1 25×2 35×3</p>
             <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-white/15 rounded-full blur-2xl" />
           </div>
           <div className="rounded-2xl p-5 bg-zinc-900 border border-white/[0.06] glow-gold">
@@ -88,7 +89,7 @@ export default async function Dashboard() {
           <div className="rounded-2xl p-5 bg-zinc-900 border border-white/[0.06]">
             <p className="text-xs font-bold tracking-widest text-zinc-500">PESSOAS ATENDIDAS</p>
             <p className="text-2xl font-black mt-1">{grandPessoas}</p>
-            <p className="text-xs text-zinc-500 mt-1">15×1 25×2 35×3 55×4 105/250×1</p>
+            <p className="text-xs text-zinc-500 mt-1">15×1 25×2 35×3 • demais ×1</p>
           </div>
         </section>
 

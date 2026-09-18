@@ -23,7 +23,6 @@ export default async function RegisterPage() {
             em segundos.
           </h1>
           <p className="text-zinc-400">Cada usuário tem seus próprios meses e lançamentos isolados. Ideal para VPS com SQLite — leve e privado.</p>
-          <div className="bg-white/[0.06] border border-white/10 rounded-2xl p-4 text-sm text-zinc-300">✨ Dica: use <b className="text-white">vinicius9141@gmail.com</b> se quiser ver o histórico já importado.</div>
         </div>
         <p className="relative text-xs text-zinc-500">SQLite • VPS ready • sem dependência externa</p>
       </div>
