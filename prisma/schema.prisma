@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  password  String
+  role      String   @default("admin") // admin, user
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  months    Month[]
+}
+
+model Month {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  year      Int
+  month     Int // 1-12
+  label     String // ex: "Página1 - Jan/2024" ou "Agosto 2024"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  entries   Entry[]
+
+  @@unique([userId, year, month])
+  @@index([userId])
+}
+
+model Entry {
+  id        String   @id @default(cuid())
+  monthId   String
+  month     Month    @relation(fields: [monthId], references: [id], onDelete: Cascade)
+  week      Int // 1-5
+  value     Float
+  type      String   @default("normal") // normal | feitico
+  note      String?
+  createdAt DateTime @default(now())
+
+  @@index([monthId, week])
+}
