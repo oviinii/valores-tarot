@@ -26,6 +26,8 @@ export default async function Dashboard() {
     return acc + pessoas;
   }, 0);
   const avg = months.length ? Math.round(grandTotal / months.length) : 0;
+  const totalLancamentos = months.reduce((acc, m) => acc + m.entries.length, 0);
+  const ticketMedio = grandPessoas ? grandTotal / grandPessoas : 0;
   const best = months.length ? [...months].sort((a, b) => b.entries.reduce((s, e) => s + e.value, 0) - a.entries.reduce((s, e) => s + e.value, 0))[0] : null;
 
   const mesesPt = ["", "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
@@ -69,17 +71,22 @@ export default async function Dashboard() {
 
       <main className="max-w-[1280px] mx-auto px-4 lg:px-6 py-6 lg:py-8 space-y-6">
         {/* stats */}
-        <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+        <section className="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4">
           <div className="rounded-2xl p-5 bg-gradient-to-br from-amber-400 to-orange-500 text-zinc-950 relative overflow-hidden">
             <p className="text-xs font-black tracking-widest opacity-70">TOTAL GERAL</p>
             <p className="text-2xl lg:text-3xl font-black mt-1 tracking-tight">{formatBRL(grandTotal)}</p>
-            <p className="text-xs font-semibold opacity-70 mt-1">{grandPessoas} pessoas atendidas • 15×1 25×2 35×3</p>
+            <p className="text-xs font-semibold opacity-70 mt-1">{grandPessoas} pessoas atendidas • 12/15×1 22/25×2 32/35×3 52/53/55×5</p>
             <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-white/15 rounded-full blur-2xl" />
           </div>
           <div className="rounded-2xl p-5 bg-zinc-900 border border-white/[0.06] glow-gold">
             <p className="text-xs font-bold tracking-widest text-zinc-500">MÉDIA / MÊS</p>
             <p className="text-2xl font-black mt-1">{formatBRL(avg)}</p>
             <p className="text-xs text-zinc-500 mt-1">{months.length} meses ativos</p>
+          </div>
+          <div className="rounded-2xl p-5 bg-zinc-900 border border-white/[0.06]">
+            <p className="text-xs font-bold tracking-widest text-zinc-500">TICKET MÉDIO</p>
+            <p className="text-2xl font-black mt-1">{formatBRL(ticketMedio)}</p>
+            <p className="text-xs text-zinc-500 mt-1">por pessoa • {totalLancamentos} lançamentos</p>
           </div>
           <div className="rounded-2xl p-5 bg-zinc-900 border border-white/[0.06]">
             <p className="text-xs font-bold tracking-widest text-zinc-500">MELHOR MÊS</p>
@@ -89,7 +96,7 @@ export default async function Dashboard() {
           <div className="rounded-2xl p-5 bg-zinc-900 border border-white/[0.06]">
             <p className="text-xs font-bold tracking-widest text-zinc-500">PESSOAS ATENDIDAS</p>
             <p className="text-2xl font-black mt-1">{grandPessoas}</p>
-            <p className="text-xs text-zinc-500 mt-1">15×1 25×2 35×3 • demais ×1</p>
+            <p className="text-xs text-zinc-500 mt-1">12/15×1 22/25×2 32/35×3 52/53/55×5 • demais ×1</p>
           </div>
         </section>
 
