@@ -75,7 +75,7 @@ export default async function Dashboard() {
           <div className="rounded-2xl p-5 bg-gradient-to-br from-amber-400 to-orange-500 text-zinc-950 relative overflow-hidden">
             <p className="text-xs font-black tracking-widest opacity-70">TOTAL GERAL</p>
             <p className="text-2xl lg:text-3xl font-black mt-1 tracking-tight">{formatBRL(grandTotal)}</p>
-            <p className="text-xs font-semibold opacity-70 mt-1">{grandPessoas} pessoas atendidas • 12/15×1 22/25×2 32/35×3 52/53/55×5</p>
+            <p className="text-xs font-semibold opacity-70 mt-1">{grandPessoas} pessoas atendidas • 12/13/15×1 22/24/25×2 32/33/35×3 42×4 52/53/55×5</p>
             <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-white/15 rounded-full blur-2xl" />
           </div>
           <div className="rounded-2xl p-5 bg-zinc-900 border border-white/[0.06] glow-gold">
@@ -96,7 +96,7 @@ export default async function Dashboard() {
           <div className="rounded-2xl p-5 bg-zinc-900 border border-white/[0.06]">
             <p className="text-xs font-bold tracking-widest text-zinc-500">PESSOAS ATENDIDAS</p>
             <p className="text-2xl font-black mt-1">{grandPessoas}</p>
-            <p className="text-xs text-zinc-500 mt-1">12/15×1 22/25×2 32/35×3 52/53/55×5 • demais ×1</p>
+            <p className="text-xs text-zinc-500 mt-1">12/13/15×1 22/24/25×2 32/33/35×3 42×4 52/53/55×5 • demais ×1</p>
           </div>
         </section>
 

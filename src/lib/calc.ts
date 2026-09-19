@@ -1,20 +1,25 @@
-// Regra atual: 12 e 15=1 pessoa, 22 e 25=2 pessoas, 32 e 35=3 pessoas, 52/53/55=5 pessoas, demais=1 pessoa
+// Regra atual: 12/13/15=1 pessoa, 22/24/25=2 pessoas, 32/33/35=3 pessoas, 42=4 pessoas, 52/53/55=5 pessoas, demais=1 pessoa
 export const PESO_POR_VALOR: Record<number, number> = {
   12: 1,
+  13: 1,
   15: 1,
   22: 2,
+  24: 2,
   25: 2,
   32: 3,
+  33: 3,
   35: 3,
+  42: 4,
   52: 5,
   53: 5,
   55: 5,
 };
 
 export function pesoPessoa(valor: number): number {
-  if (valor === 12 || valor === 15) return 1;
-  if (valor === 22 || valor === 25) return 2;
-  if (valor === 32 || valor === 35) return 3;
+  if (valor === 12 || valor === 13 || valor === 15) return 1;
+  if (valor === 22 || valor === 24 || valor === 25) return 2;
+  if (valor === 32 || valor === 33 || valor === 35) return 3;
+  if (valor === 42) return 4;
   if (valor === 52 || valor === 53 || valor === 55) return 5;
   return 1; // demais valores = 1 pessoa
 }
